@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('assets/images/hero_bg_2.jpg')}});" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('assets/images/hero_bg_2.jpg')}});" data-aos="fade">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
@@ -10,7 +10,6 @@
         </div>
     </div>
 </div>
-<form method="POST" action="{{ route('register') }}">
     @csrf
 
     <div class="row mb-3">
@@ -70,16 +69,14 @@
             </button>
         </div>
     </div>
-</form>
-
-
+</form> -->
 <div class="site-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="h4 text-black widget-title mb-3">Register</h3>
                 <form method="POST" action="{{ route('register') }}" class="form-contact-agent">
-
+                    @csrf 
                     <div class="form-group">
                         <label for="email">Name</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
