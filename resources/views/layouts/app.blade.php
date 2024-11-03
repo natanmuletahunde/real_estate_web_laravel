@@ -38,7 +38,7 @@
 </head>
 <body>
     <div id="app">
-      <!--   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <!--  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -96,7 +96,7 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-              <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
+              <h1 class="mb-0"><a href="{{ url('/') }}" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -120,8 +120,34 @@
                   </li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="contact.html">Contact</a></li>
-                  <li><a href="login.html">Login</a></li>
+             @guest
+                    @if (Route::has('login'))
+                  <li><a href="{{ route('login') }}">Login</a></li>
+                @endif
+                  @if (Route::has('register'))
                   <li><a href="register.html">Register</a></li>
+                @endif
+                
+            @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+              @endguest
+            
                 </ul>
               </nav>
             </div>
@@ -134,7 +160,7 @@
 
        <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url({{asset('assets/images/hero_bg_1.jpg')}});" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
@@ -147,7 +173,7 @@
         </div>
       </div>  
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url({{ asset('assets/images/hero_bg_2.jpg')}})"; data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
