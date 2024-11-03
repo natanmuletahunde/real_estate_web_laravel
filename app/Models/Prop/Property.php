@@ -10,4 +10,19 @@ class Property extends Model
     use HasFactory;
 
     protected $table = 'props';
+    protected $fillable = [
+        'title',
+        'price',
+        'image',
+        'beds',
+        'baths',
+        'sq/ft',
+        'home_type',
+        'year_built',
+        'price/sqft',
+        'more_info',
+        'location',
+        'agent_name',
+    ];
+    protected $timestamps = true;
 }
