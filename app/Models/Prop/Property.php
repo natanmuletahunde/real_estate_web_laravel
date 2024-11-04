@@ -24,5 +24,5 @@ class Property extends Model
         'location',
         'agent_name',
     ];
-    protected $timestamp = true;
+    public $timestamp = true;
 }

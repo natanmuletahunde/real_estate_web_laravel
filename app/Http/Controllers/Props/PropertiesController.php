@@ -12,5 +12,7 @@ class PropertiesController extends Controller
 
     public function index(){
         $props = Property::select()->take(9)->orderBy('created_at','desc')->get();
+        return view('home', compact('props'));
     }
+    
 }
