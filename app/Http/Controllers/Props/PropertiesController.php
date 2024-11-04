@@ -14,5 +14,11 @@ class PropertiesController extends Controller
         $props = Property::select()->take(9)->orderBy('created_at','desc')->get();
         return view('home', compact('props'));
     }
+
+    public function single($id){
+        $singleProp = Property::find($id);
+
+        return view('props.single', compact('singleProp'));
+    }
     
 }
