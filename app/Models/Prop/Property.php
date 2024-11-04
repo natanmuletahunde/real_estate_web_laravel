@@ -16,7 +16,7 @@ class Property extends Model
         'image',
         'beds',
         'baths',
-        'sq/ft',
+        'sq_ft',
         'home_type',
         'year_built',
         'price/sqft',
