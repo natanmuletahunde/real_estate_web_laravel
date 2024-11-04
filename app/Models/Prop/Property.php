@@ -19,7 +19,7 @@ class Property extends Model
         'sq_ft',
         'home_type',
         'year_built',
-        'price/sqft',
+        'price_sqFt',
         'more_info',
         'location',
         'agent_name',
