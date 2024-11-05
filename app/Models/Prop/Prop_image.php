@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prop_image extends Model
 {
-    //
+
+       
+     
+
 }
