@@ -21,7 +21,7 @@ class PropertiesController extends Controller
         $singleProp = Property::find($id);
         $prop_images= PropImage::find($id);
 
-        return view('props.single', compact('singleProp'));
+        return view('props.single', compact('singleProp','propImage' ));
     }
     
 }
