@@ -21,9 +21,9 @@ class PropertiesController extends Controller
         $singleProp = Property::find($id);
         $propImages= PropImage::where('prop_id',$id)->get();
 
-        return view('props.single', compact('singleProp','propImages' ));
+        // related Prop
+        $relatedProps = Property::where('home_type',$singleProp->home_type )->where('id','!=',$id)->take(3)->orderBy('created_at','desc')->get();
+        return view('props.single', compact('singleProp','propImages' , 'relatedProps' ));
     }
-
-    
     
 }
