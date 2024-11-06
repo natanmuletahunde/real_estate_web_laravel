@@ -114,9 +114,9 @@
          <div class="bg-white widget border rounded">
            <h3 class="h4 text-black widget-title mb-3 ml-0">Share</h3>
            <div class="px-3" style="margin-left: -15px;">
-             <a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
-             <a href="https://twitter.com/intent/tweet?text=&url=" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
-             <a href="https://www.linkedin.com/sharing/share-offsite/?url=" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
+             <a href="https://www.facebook.com/sharer/sharer.php?u={{route('single.prop', $singleProp->id)}}&quote={{$singleProp->title}}  " class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
+             <a href="https://twitter.com/intent/tweet?text= {{$singleProp->title}} &url={{route('single.prop', $singleProp->id)}}"class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
+             <a href="https://www.linkedin.com/sharing/share-offsite/?url=" class={{route('single.prop', $singleProp->id)}} class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
            </div>
          </div>
 

@@ -23,5 +23,7 @@ class PropertiesController extends Controller
 
         return view('props.single', compact('singleProp','propImages' ));
     }
+
+    
     
 }
