@@ -176,7 +176,7 @@
          </div>
        </div>
      @endforeach 
-     @else
+     @else__
      <h2 class =" ">There are not related Proprties for now </h2>
     @endif
   
