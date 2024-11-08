@@ -98,7 +98,7 @@
              </div>
              <div class="form-group">
                <label for="agent_name">Agent Name</label>
-               <input name="agent_name" value="{{ $singleProp->agent_name }}" type="text" id="agent_name" class="form-control">
+               <input name="agent_name" value="{{ $singleProp->agent_name }}" type="hidden" id="agent_name" class="form-control">
              </div>
              <div class="form-group">
                <label for="name">Name</label>

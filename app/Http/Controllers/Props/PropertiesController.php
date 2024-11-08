@@ -29,6 +29,12 @@ class PropertiesController extends Controller
     }
 
     public function insertRequests(Request $request){
+
+        Request ()->validate([
+       "name"=>'required|max:40',
+       "email"=>'required|max:70',
+       "phone"=>'required|max:50',
+        ]);
         $insertRequest = AllRequest::create([
             'Prop_id' => $request->prop_id, // Using correct field name
             'agent_name' => $request->agent_name, // Corrected field name
