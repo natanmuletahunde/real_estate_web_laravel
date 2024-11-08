@@ -43,6 +43,12 @@ class PropertiesController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
         ]);
+
+
+        if($insertRequest){
+          
+            
+        }
         echo "Request is completed";
     }
     

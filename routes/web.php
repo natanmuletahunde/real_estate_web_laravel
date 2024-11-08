@@ -10,9 +10,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [PropertiesController::class, 'index'])->name('home');
-Route::get('/prop-details/{id}', [PropertiesController::class, 'single'])->name('single.prop');
-
+Route::get('props/prop-details/{id}', [PropertiesController::class, 'single'])->name('single.prop');
 // inserting request 
-Route::post('/prop-details/{id}', [PropertiesController::class, 'insertRequests'])->name('insert.request');
+Route::post('props/prop-details/{id}', [PropertiesController::class, 'insertRequests'])->name('insert.request');
 
 
