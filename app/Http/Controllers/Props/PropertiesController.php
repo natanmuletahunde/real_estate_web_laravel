@@ -7,6 +7,7 @@ use App\Models\Prop\Property;
 use App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Auth;
+use App\Models\Prop\Allrequest;
 
 
 class PropertiesController extends Controller
@@ -36,7 +37,7 @@ class PropertiesController extends Controller
         'email'=>$request->email,
         'phone'=>$request->phone,
        ]) ;
-        return view('home', compact('props'));
+       echo " request is completed";
     }
     
 }

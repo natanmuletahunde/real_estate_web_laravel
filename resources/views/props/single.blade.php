@@ -83,8 +83,6 @@
              </div>
              @endforeach
            </div>
-
-
          </div>
        </div>
        <div class="col-lg-4">
@@ -92,21 +90,34 @@
          <div class="bg-white widget border rounded">
 
            <h3 class="h4 text-black widget-title mb-3">Contact Agent</h3>
-           <form action="" class="form-contact-agent">
-             <div class="form-group">
-               <label for="name">Name</label>
-               <input type="text" id="name" class="form-control">
+           <form   method="POST" action="{{route('insert.request', $singleProp->id)}}" class="form-contact-agent">
+            @csrf
+           <div class="form-group">
+               <label for="name">Prop_id</label>
+               <input name="prop_id" value="{{$singleProp->agent_name}}" type="text" id="name" class="form-control">
              </div>
              <div class="form-group">
-               <label for="email">Email</label>
-               <input type="email" id="email" class="form-control">
+               <label for="name">agent_name</label>
+               <input name="agent_name" value="" type="text" id="name" class="form-control">
+             </div>
+           <div class="form-group">
+               <label for="name">user_id</label>
+               <input name="user_id" type="text" id="name" class="form-control">
              </div>
              <div class="form-group">
-               <label for="phone">Phone</label>
-               <input type="text" id="phone" class="form-control">
+               <label for="email">Name</label>
+               <input name="name"  type="email" id="email" class="form-control">
+             </div>
+              <div class="form-group">
+               <label for="phone">Email</label>
+               <input name="email" type="text" id="phone" class="form-control">
              </div>
              <div class="form-group">
-               <input type="submit" id="phone" class="btn btn-primary" value="Send Message">
+               <label for="phone">phone</label>
+               <input name="phone" type="text" id="phone" class="form-control">
+             </div>
+             <div class="form-group">
+               <input type="submit" name="submit" id="phone" class="btn btn-primary" value="Send Request">
              </div>
            </form>
          </div>

@@ -4,7 +4,7 @@ namespace App\Models\Prop;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class AllRequest extends Model
 {
   
 
