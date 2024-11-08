@@ -7,7 +7,7 @@ use App\Models\Prop\Property;
 use App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Auth;
-use App\Models\Prop\Allrequest;
+use App\Models\Prop\AllRequest;
 
 
 class PropertiesController extends Controller
@@ -29,7 +29,7 @@ class PropertiesController extends Controller
     }
 
     public function insertRequests(Request $request){
-       $insertRequest = Property::create([
+       $insertRequest = AllRequest::create([
         'prop_id'=>$request->prop_id,
         'agent_name'=>$request->agent_id,
         'user_id'=>Auth::user()->name,

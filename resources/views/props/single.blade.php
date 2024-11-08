@@ -100,10 +100,6 @@
                <label for="name">agent_name</label>
                <input name="agent_name" value="" type="text" id="name" class="form-control">
              </div>
-           <div class="form-group">
-               <label for="name">user_id</label>
-               <input name="user_id" type="text" id="name" class="form-control">
-             </div>
              <div class="form-group">
                <label for="email">Name</label>
                <input name="name"  type="email" id="email" class="form-control">
