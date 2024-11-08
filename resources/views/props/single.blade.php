@@ -104,14 +104,29 @@
                <label for="name">Name</label>
                <input name="name" type="text" id="name" class="form-control">
              </div>
+             @error('name')
+             <span class="text-danger" role="alert">
+               <strong>{{$message}}</strong>
+             </span>
+             @enderror
              <div class="form-group">
                <label for="email">Email</label>
                <input name="email" type="text" id="email" class="form-control">
              </div>
+             @error('email')
+             <span class="text-danger" role="alert">
+               <strong>{{$message}}</strong>
+             </span>
+             @enderror
              <div class="form-group">
                <label for="phone">Phone</label>
                <input name="phone" type="text" id="phone" class="form-control">
              </div>
+             @error('phone')
+             <span class="text-danger" role="alert">
+               <strong>{{$message}}</strong>
+             </span>
+             @enderror
              <div class="form-group">
                <input type="submit" name="submit" class="btn btn-primary" value="Send Request">
              </div>
