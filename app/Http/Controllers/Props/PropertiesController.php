@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Prop\Property;
 use App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
+use \Illuminate\Support\Facades\Auth;
 
 
 class PropertiesController extends Controller
@@ -26,8 +27,15 @@ class PropertiesController extends Controller
         return view('props.single', compact('singleProp','propImages' , 'relatedProps' ));
     }
 
-    public function insertRequests(){
-        $props = Property::select()->take(9)->orderBy('created_at','desc')->get();
+    public function insertRequests(Request $request){
+       $insertRequest = Property::create([
+        'prop_id'=>$request->prop_id,
+        'agent_name'=>$request->agent_id,
+        'user_id'=>Auth::user()->name,
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'phone'=>$request->phone,
+       ]) ;
         return view('home', compact('props'));
     }
     
