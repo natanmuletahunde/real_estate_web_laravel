@@ -14,6 +14,12 @@
      </div>
    </div>
  </div>
+ @if (\Session::has('success'))
+ <div class="alert alert-success">  <p>{!!\Session::get('success') !!}</p>
+ </div>
+ 
+ @endif  
+
 
  <!-- another page -->
  <div class="site-section site-section-sm">
@@ -93,11 +99,10 @@
            <form method="POST" action="{{ route('insert.request', $singleProp->id) }}" class="form-contact-agent">
              @csrf
              <div class="form-group">
-               <label for="prop_id">Prop_id</label>
-               <input name="prop_id" value="{{ $singleProp->id }}" type="text" id="prop_id" class="form-control">
+               <input name="prop_id" value="{{ $singleProp->id }}" type="hidden" id="prop_id" class="form-control">
              </div>
              <div class="form-group">
-               <label for="agent_name">Agent Name</label>
+              
                <input name="agent_name" value="{{ $singleProp->agent_name }}" type="hidden" id="agent_name" class="form-control">
              </div>
              <div class="form-group">

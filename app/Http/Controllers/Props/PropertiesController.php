@@ -46,8 +46,8 @@ class PropertiesController extends Controller
 
 
         if($insertRequest){
-          
-            
+          return redirect('props/prop-details/'.$request->prop_is.'')->with('succes','Request added  successfuly');
+  
         }
         echo "Request is completed";
     }
