@@ -25,5 +25,10 @@ class PropertiesController extends Controller
         $relatedProps = Property::where('home_type',$singleProp->home_type )->where('id','!=',$id)->take(3)->orderBy('created_at','desc')->get();
         return view('props.single', compact('singleProp','propImages' , 'relatedProps' ));
     }
+
+    public function insertRequests(){
+        $props = Property::select()->take(9)->orderBy('created_at','desc')->get();
+        return view('home', compact('props'));
+    }
     
 }
