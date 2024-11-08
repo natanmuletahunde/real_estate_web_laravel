@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Prop\Property;
 use App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
-use \Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Prop\AllRequest;
 
 
@@ -29,15 +29,17 @@ class PropertiesController extends Controller
     }
 
     public function insertRequests(Request $request){
-       $insertRequest = AllRequest::create([
-        'prop_id'=>$request->prop_id,
-        'agent_name'=>$request->agent_id,
-        'user_id'=>Auth::user()->name,
-        'name'=>$request->name,
-        'email'=>$request->email,
-        'phone'=>$request->phone,
-       ]) ;
-       echo " request is completed";
+        $insertRequest = AllRequest::create([
+            'Prop_id' => $request->prop_id, // Using correct field name
+            'agent_name' => $request->agent_name, // Corrected field name
+            'user_id' => Auth::id(), // Get the authenticated user's ID
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+        ]);
+        echo "Request is completed";
     }
+    
+    
     
 }
