@@ -16,6 +16,6 @@ Route::post('props/prop-details/{id}', [PropertiesController::class, 'insertRequ
 
 // saving props
 Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps'])->name('save.prop');
- 
+
 
 

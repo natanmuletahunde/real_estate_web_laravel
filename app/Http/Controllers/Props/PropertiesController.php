@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Props;
 
 use App\Http\Controllers\Controller;
+use App\Models\Prop\AllRequest;
 use App\Models\Prop\Property;
 use App\Models\Prop\PropImage;
+use App\Models\Prop\SavedProp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Prop\AllRequest;
-use App\Models\Prop\SavedProp;
 
 class PropertiesController extends Controller
 {
@@ -31,9 +31,15 @@ class PropertiesController extends Controller
 
         // validating form request
         $validatingFormCount = AllRequest::where('prop_id', $id)->where('user_id', Auth::user()->id)->count(); // this code snippet count the number of the request that are much for both prop_id and user_id;;
+        
+
+        // validailing saving Props
+
+        $validatingSavingPropsCount = SavedProp::where('prop_id', $id)->where('user_id', Auth::user()->id)->count(); // this code snippet count the number of the request that are much for both prop_id and user_id;;
 
 
-        return view('props.single', compact('singleProp', 'propImages', 'relatedProps','validatingFormCount'));
+
+        return view('props.single', compact('singleProp', 'propImages', 'relatedProps','validatingFormCount','validatingSavingPropsCount'));
     }
 
     public function insertRequests(Request $request)
