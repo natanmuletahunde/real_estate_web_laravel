@@ -112,7 +112,7 @@ class PropertiesController extends Controller
         
         
         $propsByHomeType = Property::select()->where('home_type',$hometype)->get();
-        return view('props.propshometype', compact('propsByHomeType'));
+        return view('props.propshometype', compact('propsByHomeType', 'hometype'));
     }
 
 }

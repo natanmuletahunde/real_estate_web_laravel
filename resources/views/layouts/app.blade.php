@@ -106,7 +106,7 @@
 
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
                                 <li class="active">
-                                    <a href="index.html">Home</a>
+                                    <a href="{{url('/')}}">Home</a>
                                 </li>
                                 <li><a href="{{route('buy.prop')}}">Buy</a></li>
                                 <li><a href="{{route('rent.prop')}}">Rent</a></li>
