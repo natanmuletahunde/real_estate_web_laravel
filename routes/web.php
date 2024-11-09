@@ -20,3 +20,6 @@ Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps']
 // displying props by rent and buy 
 
 Route::get('props/type/Buy', [PropertiesController::class, 'propsBuy'])->name('buy.prop');
+
+Route::get('props/type/rent', [PropertiesController::class, 'propsRent'])->name('rent.prop');
+

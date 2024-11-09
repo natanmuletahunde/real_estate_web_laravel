@@ -63,7 +63,6 @@
          </div>
        </div>
        @endforeach
-       @else__
        <h2 class=" ">There are not Buy Proprties for now </h2>
        @endif
 
