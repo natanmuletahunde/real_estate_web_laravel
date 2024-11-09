@@ -17,10 +17,14 @@ Route::post('props/prop-details/{id}', [PropertiesController::class, 'insertRequ
 // saving props
 Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps'])->name('save.prop');
 
-// displying props by rent and buy 
+// displying props by rent and buy
 
 Route::get('props/type/Buy', [PropertiesController::class, 'propsBuy'])->name('buy.prop');
 
 Route::get('props/type/rent', [PropertiesController::class, 'propsRent'])->name('rent.prop');
   
 
+// displying props by  hometype
+   
+
+Route::get('props/home-type/{hometype}', [PropertiesController::class, 'displayByHomeType'])->name('display.prop.hometytpe');

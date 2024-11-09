@@ -115,7 +115,7 @@
                                     <ul class="dropdown arrow-top">
 
                                         @foreach ($homeTypes as $hometype)
-                                        <li><a href="#">{{$hometype->hometypes}}</a></li>
+                                        <li><a href="{{route('display.prop.hometytpe',$hometype->hometypes)}}">{{$hometype->hometypes}}</a></li>
                                         @endforeach
 
                                     </ul>
