@@ -20,6 +20,14 @@
  </div>
  @endif  
  </div>
+ <div class="container">
+ @if (\Session::has('save'))
+ <div class="alert alert-success">  <p>{!!\Session::get('save') !!}</p>
+ </div>
+ @endif  
+ </div>
+
+
 
  <!-- another page -->
  <div class="site-section site-section-sm">
@@ -146,6 +154,44 @@
         @endif
 
          </div>
+
+
+         <div class="bg-white widget border rounded">
+
+<h3 class="h4 text-black widget-title mb-3">Save this property</h3>
+
+<!-- @if($validatingFormCount>0)
+<p class="alert alert-success">
+
+You are already sent request for this property 
+</p>
+@else -->
+<form method="POST" action="{{ route('save.prop', $singleProp->id) }}" class="form-contact-agent">
+  @csrf
+  <div class="form-group">
+    <input name="prop_id" value="{{ $singleProp->id }}" type="hidden" id="prop_id" class="form-control">
+  </div>
+  <div class="form-group">
+   
+    <input name="title" value="{{ $singleProp->title }}" type="hidden" id="agent_name" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="image"  value="{{ $singleProp->image }}" type="text" id="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <input name="location" value="{{ $singleProp->location }}" type="text" id="email" class="form-control">
+  </div>
+  <div class="form-group">
+
+    <input name="price" type="text" value="{{ $singleProp->price }}" id="phone" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="submit" name="submit" class="btn btn-primary" value="Saved Property">
+  </div>
+</form>
+<!-- @endif -->
+
+</div>
 
          <div class="bg-white widget border rounded">
            <h3 class="h4 text-black widget-title mb-3 ml-0">Share</h3>

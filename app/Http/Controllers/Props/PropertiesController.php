@@ -8,7 +8,7 @@ use App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Prop\AllRequest;
-
+use App\Models\Prop\SavedProp;
 
 class PropertiesController extends Controller
 {
@@ -56,6 +56,30 @@ class PropertiesController extends Controller
 
         if ($insertRequest) {
             return redirect('props/prop-details/' . $request->prop_id . '')->with('success', 'Request added  successfuly');
+        }
+        echo "Request is completed";
+    }
+
+    public function saveProps(Request $request)
+    {
+
+        // Request()->validate([
+        //     "name" => 'required|max:40',
+        //     "email" => 'required|max:70',
+        //     "phone" => 'required|max:50',
+        // ]);
+        $saveProp = SavedProp::create([
+            'Prop_id' => $request->prop_id, 
+            'user_id' => Auth::id(),// Using correct field name
+            'title' => $request->title, // Corrected field nam
+            'image' => $request->image,
+            'location' => $request->location,
+            'price' => $request->price,
+        ]);
+
+
+        if ($saveProp) {
+            return redirect('props/prop-details/' . $request->prop_id . '')->with('save', 'Property saved  successfuly');
         }
         echo "Request is completed";
     }
