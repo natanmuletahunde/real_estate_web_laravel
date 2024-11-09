@@ -12,28 +12,37 @@ use App\Models\Prop\AllRequest;
 
 class PropertiesController extends Controller
 {
-  
 
-    public function index(){
-        $props = Property::select()->take(9)->orderBy('created_at','desc')->get();
+
+    public function index()
+    {
+        $props = Property::select()->take(9)->orderBy('created_at', 'desc')->get();
         return view('home', compact('props'));
     }
 
-    public function single($id){
+    public function single($id)
+    {
         $singleProp = Property::find($id);
-        $propImages= PropImage::where('prop_id',$id)->get();
+        $propImages = PropImage::where('prop_id', $id)->get();
 
         // related Prop
-        $relatedProps = Property::where('home_type',$singleProp->home_type )->where('id','!=',$id)->take(3)->orderBy('created_at','desc')->get();
-        return view('props.single', compact('singleProp','propImages' , 'relatedProps' ));
+        $relatedProps = Property::where('home_type', $singleProp->home_type)->where('id', '!=', $id)->take(3)->orderBy('created_at', 'desc')->get();
+
+
+        // validating form request
+        $validatingFormCount = AllRequest::where('prop_id', $id)->where('user_id', Auth::user()->id)->count(); // this code snippet count the number of the request that are much for both prop_id and user_id;;
+
+
+        return view('props.single', compact('singleProp', 'propImages', 'relatedProps','validatingFormCount'));
     }
 
-    public function insertRequests(Request $request){
+    public function insertRequests(Request $request)
+    {
 
-        Request ()->validate([
-       "name"=>'required|max:40',
-       "email"=>'required|max:70',
-       "phone"=>'required|max:50',
+        Request()->validate([
+            "name" => 'required|max:40',
+            "email" => 'required|max:70',
+            "phone" => 'required|max:50',
         ]);
         $insertRequest = AllRequest::create([
             'Prop_id' => $request->prop_id, // Using correct field name
@@ -45,13 +54,9 @@ class PropertiesController extends Controller
         ]);
 
 
-        if($insertRequest){
-          return redirect('props/prop-details/'.$request->prop_is.'')->with('succes','Request added  successfuly');
-  
+        if ($insertRequest) {
+            return redirect('props/prop-details/' . $request->prop_id . '')->with('success', 'Request added  successfuly');
         }
         echo "Request is completed";
     }
-    
-    
-    
 }

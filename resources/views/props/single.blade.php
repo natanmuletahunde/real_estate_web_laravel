@@ -14,12 +14,12 @@
      </div>
    </div>
  </div>
+ <div class="container">
  @if (\Session::has('success'))
  <div class="alert alert-success">  <p>{!!\Session::get('success') !!}</p>
  </div>
- 
  @endif  
-
+ </div>
 
  <!-- another page -->
  <div class="site-section site-section-sm">
@@ -96,7 +96,14 @@
          <div class="bg-white widget border rounded">
 
            <h3 class="h4 text-black widget-title mb-3">Contact Agent</h3>
-           <form method="POST" action="{{ route('insert.request', $singleProp->id) }}" class="form-contact-agent">
+
+        @if($validatingFormCount > 0)
+           <p class="alert alert-success">
+           You are already sent request for this property 
+           </p>
+        @else
+        <form method="POST" action="{{ route('insert.request', $singleProp->id) }}" class="form-contact-agent">
+        @endif
              @csrf
              <div class="form-group">
                <input name="prop_id" value="{{ $singleProp->id }}" type="hidden" id="prop_id" class="form-control">
@@ -259,7 +266,7 @@
 
 
 
-             </div>
+             </div> 
 
            </div>
            <div class="row pt-5 mt-5 text-center">
