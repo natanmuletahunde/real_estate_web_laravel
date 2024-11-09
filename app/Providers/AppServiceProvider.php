@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-    $homeTypes = DB::table('homeTypes')->get();
-    View::share('homeTypes', $homeTypes);
+        $homeTypes = DB::table('homeTypes')->get();
+        View::share('homeTypes', $homeTypes);
     }
+    
 }

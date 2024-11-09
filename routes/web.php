@@ -22,4 +22,5 @@ Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps']
 Route::get('props/type/Buy', [PropertiesController::class, 'propsBuy'])->name('buy.prop');
 
 Route::get('props/type/rent', [PropertiesController::class, 'propsRent'])->name('rent.prop');
+  
 

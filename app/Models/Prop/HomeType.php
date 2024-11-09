@@ -11,7 +11,6 @@ class HomeType extends Model
     protected $fillable = [
         'id',
         'hometypes',
-    
     ];
     public $timestamp = true;
 }
