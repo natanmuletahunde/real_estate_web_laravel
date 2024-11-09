@@ -17,5 +17,6 @@ Route::post('props/prop-details/{id}', [PropertiesController::class, 'insertRequ
 // saving props
 Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps'])->name('save.prop');
 
+// displying props by rent and buy 
 
-
+Route::get('props/type/{type}', [PropertiesController::class, 'propBuy'])->name('buy.prop');

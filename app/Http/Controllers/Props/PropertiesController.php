@@ -89,4 +89,12 @@ class PropertiesController extends Controller
         }
         echo "Request is completed";
     }
+
+    
+    public function propsBuy($type)
+    {
+        $props = Property::select()->take(9)->orderBy('created_at', 'desc')->get();
+        return view('home', compact('props'));
+    }
+
 }
