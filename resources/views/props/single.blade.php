@@ -151,7 +151,7 @@
                <input type="submit" name="submit" class="btn btn-primary" value="Send Request">
              </div>
            </form>
-        @endif
+        <!-- @endif -->
 
          </div>
 
@@ -169,27 +169,25 @@ You are already sent request for this property
 <form method="POST" action="{{ route('save.prop', $singleProp->id) }}" class="form-contact-agent">
   @csrf
   <div class="form-group">
-    <input name="prop_id" value="{{ $singleProp->id }}" type="hidden" id="prop_id" class="form-control">
+    <input name="prop_id" value="{{ $singleProp->id }}" type="id" id="prop_id" class="form-control">
   </div>
   <div class="form-group">
-   
     <input name="title" value="{{ $singleProp->title }}" type="hidden" id="agent_name" class="form-control">
   </div>
   <div class="form-group">
-    <input name="image"  value="{{ $singleProp->image }}" type="text" id="name" class="form-control">
+    <input name="image" type="hidden" value="{{ $singleProp->image }}"  id="name" class="form-control">
   </div>
   <div class="form-group">
-    <input name="location" value="{{ $singleProp->location }}" type="text" id="email" class="form-control">
+    <input name="location" type="hidden" value="{{ $singleProp->location }}"   name="location" id="email" class="form-control">
   </div>
   <div class="form-group">
-
-    <input name="price" type="text" value="{{ $singleProp->price }}" id="phone" class="form-control">
+    <input name="price" type="hidden" value="{{ $singleProp->price }}" id="phone" class="form-control">
   </div>
   <div class="form-group">
     <input type="submit" name="submit" class="btn btn-primary" value="Saved Property">
   </div>
 </form>
-<!-- @endif -->
+@endif
 
 </div>
 
