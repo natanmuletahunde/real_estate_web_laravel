@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\Props\PropertiesController;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +19,4 @@ Route::post('props/saved-props/{id}', [PropertiesController::class, 'saveProps']
 
 // displying props by rent and buy 
 
-Route::get('props/type/{type}', [PropertiesController::class, 'propBuy'])->name('buy.prop');
+Route::get('props/type/Buy', [PropertiesController::class, 'propsBuy'])->name('buy.prop');

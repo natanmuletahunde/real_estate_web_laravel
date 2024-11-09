@@ -10,6 +10,7 @@ use App\Models\Prop\SavedProp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class PropertiesController extends Controller
 {
 
@@ -91,10 +92,12 @@ class PropertiesController extends Controller
     }
 
     
-    public function propsBuy($type)
-    {
-        $props = Property::select()->take(9)->orderBy('created_at', 'desc')->get();
-        return view('home', compact('props'));
+    public function propsBuy()
+    {    
+        
+        $type = "buy";
+        $propsBuy = Property::select()->where('type',$type)->get();
+        return view('props.propsbuy', compact('propsBuy'));
     }
 
 }

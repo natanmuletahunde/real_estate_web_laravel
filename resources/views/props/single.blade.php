@@ -2,7 +2,7 @@
 
  @section('content')
 
- @endsection
+
 
  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('assets/images/'.$singleProp->image.'')}});" data-aos="fade">
 
@@ -328,3 +328,7 @@
        </footer>
 
      </div>
+
+    </div>
+    </div>
+@endsection
