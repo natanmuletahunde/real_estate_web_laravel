@@ -97,13 +97,13 @@
 
            <h3 class="h4 text-black widget-title mb-3">Contact Agent</h3>
 
-        @if($validatingFormCount > 0)
+        @if($validatingFormCount>0)
            <p class="alert alert-success">
+
            You are already sent request for this property 
            </p>
         @else
         <form method="POST" action="{{ route('insert.request', $singleProp->id) }}" class="form-contact-agent">
-        @endif
              @csrf
              <div class="form-group">
                <input name="prop_id" value="{{ $singleProp->id }}" type="hidden" id="prop_id" class="form-control">
@@ -143,6 +143,7 @@
                <input type="submit" name="submit" class="btn btn-primary" value="Send Request">
              </div>
            </form>
+        @endif
 
          </div>
 
