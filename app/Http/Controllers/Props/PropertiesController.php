@@ -115,4 +115,28 @@ class PropertiesController extends Controller
         return view('props.propshometype', compact('propsByHomeType', 'hometype'));
     }
 
+    
+    public function priceAsc()
+    {    
+        $propsByPriceAsc = Property::select()->orderBy('price','asc')->get();
+        return view('props.propspriceasc', compact('propsByPriceAsc'));
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
