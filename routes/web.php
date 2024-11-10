@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Props\PropertiesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +30,10 @@ Route::get('props/type/rent', [PropertiesController::class, 'propsRent'])->name(
    
 
 Route::get('props/home-type/{hometype}', [PropertiesController::class, 'displayByHomeType'])->name('display.prop.hometytpe');
+
+
+// display contact and about pages
+
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+
+
