@@ -120,7 +120,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="{{route('about')}}">About</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
 
                                 @guest
