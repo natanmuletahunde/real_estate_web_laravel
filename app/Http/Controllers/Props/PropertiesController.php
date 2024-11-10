@@ -118,13 +118,13 @@ class PropertiesController extends Controller
     
     public function priceAsc()
     {    
-        $propsByPriceAsc = Property::select()->orderBy('price','asc')->get();
+        $propsByPriceAsc = Property::select()->take(9)->orderBy('price','asc')->get();
         return view('props.propspriceasc', compact('propsByPriceAsc'));
     }
 
     public function priceDesc()
     {    
-        $propsByPriceDesc = Property::select()->orderBy('price','desc')->get();
+        $propsByPriceAsc = Property::select()->take(9)->orderBy('price','desc')->get();
         return view('props.propspricedesc', compact('propsByPriceDesc'));
     }
 
