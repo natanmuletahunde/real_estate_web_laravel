@@ -35,9 +35,7 @@ Route::get('props/home-type/{hometype}', [PropertiesController::class, 'displayB
 // displying props by  price asc and desc 
    
 
-Route::get('props/price-asc', [PropertiesController::class, 'priceAsc'])->name('price.desc.prop');
-
-
+Route::get('props/price-asc', [PropertiesController::class, 'priceAsc'])->name('price.asc.prop');
 
 // display contact and about pages
 
