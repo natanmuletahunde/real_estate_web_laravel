@@ -122,6 +122,12 @@ class PropertiesController extends Controller
         return view('props.propspriceasc', compact('propsByPriceAsc'));
     }
 
+    public function priceDesc()
+    {    
+        $propsByPriceDesc = Property::select()->orderBy('price','desc')->get();
+        return view('props.propspricedesc', compact('propsByPriceDesc'));
+    }
+
 }
 
 

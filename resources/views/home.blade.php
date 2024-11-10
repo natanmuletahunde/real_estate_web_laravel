@@ -83,8 +83,8 @@
               <a href="{{route('home')}}" class="view-list px-3 border-right active">All</a>
               <a href="{{route('buy.prop')}}" class="view-list px-3 border-right">Buy</a>
               <a href="{{route('rent.prop')}}" class="view-list px-3">Rent</a>
-              <a href="{{route('price.asc.prop')}}" class="view-list px-3">Rent</a>
-
+              <a href="{{route('price.asc.prop')}}" class="view-list px-3">By Price Ascending </a>
+              <a href="{{route('price.desc.prop')}}" class="view-list px-3">By Price Descending</a>
             </div>
 
 
