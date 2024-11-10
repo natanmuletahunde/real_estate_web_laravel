@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Props\PropertiesController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Users\UsersController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -46,7 +46,7 @@ Route::get('props/price-desc', [PropertiesController::class, 'priceDesc'])->name
 // display contact and about pages
 
 // user pages
-Route::get('User/all-request', [UsersController::class, 'all-request'])->name('all.requests');
+Route::get('User/all-request', [UsersController::class, 'allRequests'])->name('all.requests');
 
 
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
