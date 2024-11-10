@@ -5,10 +5,10 @@ use App\Http\Controllers\Props\PropertiesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PropertiesController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [PropertiesController::class, 'index'])->name('home');
