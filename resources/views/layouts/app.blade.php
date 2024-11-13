@@ -82,6 +82,10 @@
                                 {{ __('Logout') }}
                             </a>
 
+                            <a class="dropdown-item" href="{{ route('all.requests') }}">
+                                {{ __('allrequests') }}
+                            </a>
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
