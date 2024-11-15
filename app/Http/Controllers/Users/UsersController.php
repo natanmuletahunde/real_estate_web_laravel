@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
 
-    public  function allRequests(){
+ public  function allRequests(){
          $allrequests =  AllRequest::where('user_id',Auth::user()->id)->get();
          return view('users.displayrequests', compact('allrequests'));
     }
