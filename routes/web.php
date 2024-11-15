@@ -42,7 +42,7 @@ Route::get('props/price-desc', [PropertiesController::class, 'priceDesc'])->name
 // display contact and about pages
 
 // user pages
-Route::get('users/all-req uests', [PropertiesController::class, 'priceDesc'])->name('price.desc.prop');
+Route::get('users/all-requests', [UsersController::class, 'allRequests'])->name('all.requests');
 
 
 
