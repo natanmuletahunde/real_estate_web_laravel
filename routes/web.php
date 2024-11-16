@@ -44,6 +44,8 @@ Route::get('props/price-desc', [PropertiesController::class, 'priceDesc'])->name
 
 // user pages
 Route::get('users/all-requests', [UsersController::class, 'allRequests'])->name('all.requests');
+Route::get('users/all-saved-props', [UsersController::class, 'allSavedProps'])->name('all.saved.props');
+
 
 
 

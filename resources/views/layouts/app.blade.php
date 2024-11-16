@@ -146,6 +146,11 @@
                                           <a class="dropdown-item" href="{{ route('all.requests') }}">
                                             All Request
                                           </a>
+                                          <a class="dropdown-item" href="{{ route(' all.saved.props') }}">
+                                            All Saved Property
+                                          </a>
+
+                                         
 
 
 
