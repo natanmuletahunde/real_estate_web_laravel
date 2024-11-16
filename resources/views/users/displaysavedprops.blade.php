@@ -7,7 +7,7 @@
 <div class="row align-items-center justify-content-center text-center">
   <div class="col-md-10">
     <span class="d-inline-block text-white px-3 mb-3 property-offer-type rounded">Property Details of</span>s
-    <h1 class="mb-2"> All Requests for  Properties</h1>
+    <h1 class="mb-2"> All saved    Properties</h1>
 
   </div>
 </div>
