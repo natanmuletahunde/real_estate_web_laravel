@@ -142,6 +142,14 @@
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                          <!-- #region -->
+                                          <a class="dropdown-item" href="{{ route('all.requests') }}">
+                                            All Request
+                                          </a>
+
+
+
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
