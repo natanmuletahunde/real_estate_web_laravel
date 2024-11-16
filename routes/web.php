@@ -29,7 +29,7 @@ Route::get('props/type/rent', [PropertiesController::class, 'propsRent'])->name(
   
 
 // displying props by  hometype
-   
+
 
 Route::get('props/home-type/{hometype}', [PropertiesController::class, 'displayByHomeType'])->name('display.prop.hometytpe');
 
