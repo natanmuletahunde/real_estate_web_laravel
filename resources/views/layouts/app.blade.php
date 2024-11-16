@@ -74,26 +74,29 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('all.requests') }}">
+                                All Request
+                            </a>
+                            <a class="dropdown-item" href="{{ route('all.saved.props') }}">
+                                All Saved Properties
+                            </a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); 
+                 document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </div>
+
+                        <!-- Logout form placed outside the dropdown -->
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('all.requests') }}">
-                                    All Request
-                                </a>
-                                <a class="dropdown-item" href="{{ route('all.saved.props') }}">
-                                    All Saved Properties
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                </div>
-                            </form>
+                        </form>
 
 
 
-                       
+
+
                     </li>
                     @endguest
                 </ul>
