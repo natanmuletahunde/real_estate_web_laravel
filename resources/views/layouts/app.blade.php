@@ -76,6 +76,13 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="{{ route('all.requests') }}">
+                                All Request
+                            </a>
+                            <a class="dropdown-item" href="{{ route(' all.saved.props') }}">
+                                All Saved Properties
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -142,15 +149,10 @@
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-                                          <!-- #region -->
-                                          <a class="dropdown-item" href="{{ route('all.requests') }}">
-                                            All Request
-                                          </a>
-                                          <a class="dropdown-item" href="{{ route(' all.saved.props') }}">
-                                            All Saved Property
-                                          </a>
+                                        <!-- #region -->
 
-                                         
+
+
 
 
 
