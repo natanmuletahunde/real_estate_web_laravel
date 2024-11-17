@@ -14,6 +14,12 @@ Route::get('/', [PropertiesController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [PropertiesController::class, 'index'])->name('home');
+// group route
+Route::group(['prefix'=> 'props'] , function(){
+
+});
+
+
 Route::get('props/prop-details/{id}', [PropertiesController::class, 'single'])->name('single.prop');
 // inserting request 
 Route::post('props/prop-details/{id}', [PropertiesController::class, 'insertRequests'])->name('insert.request');
