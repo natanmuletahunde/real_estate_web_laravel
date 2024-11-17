@@ -46,11 +46,7 @@ Route::get('home-type/{hometype}', [PropertiesController::class, 'displayByHomeT
 Route::get('price-asc', [PropertiesController::class, 'priceAsc'])->name('price.asc.prop');
 Route::get('price-desc', [PropertiesController::class, 'priceDesc'])->name('price.desc.prop');
 });
-
-
-
 // display contact and about pages
-
 // user pages
 Route::group(['prefix'=> 'users'] , function(){
 Route::get('all-requests', [UsersController::class, 'allRequests'])->name('all.requests');
