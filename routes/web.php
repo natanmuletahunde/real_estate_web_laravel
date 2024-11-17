@@ -24,10 +24,10 @@ Route::get('prop-details/{id}', [PropertiesController::class, 'single'])->name('
 // inserting request 
 Route::post('prop-details/{id}', [PropertiesController::class, 'insertRequests'])->name('insert.request');
 
-// saving props
+
 Route::post('saved-props/{id}', [PropertiesController::class, 'saveProps'])->name('save.prop');
 
-// displying props by rent and buy
+
 
 Route::get('type/Buy', [PropertiesController::class, 'propsBuy'])->name('buy.prop');
 
