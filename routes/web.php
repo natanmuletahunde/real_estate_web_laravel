@@ -14,6 +14,8 @@ Route::get('/', [PropertiesController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [PropertiesController::class, 'index'])->name('home');
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('about', [HomeController::class, 'about'])->name('about');
 // group route
 Route::group(['prefix'=> 'props'] , function(){
    
@@ -50,15 +52,15 @@ Route::get('price-desc', [PropertiesController::class, 'priceDesc'])->name('pric
 // display contact and about pages
 
 // user pages
-Route::get('users/all-requests', [UsersController::class, 'allRequests'])->name('all.requests');
-Route::get('users/all-saved-props', [UsersController::class, 'allSavedProps'])->name('all.saved.props');
+Route::group(['prefix'=> 'users'] , function(){
+Route::get('all-requests', [UsersController::class, 'allRequests'])->name('all.requests');
+Route::get('all-saved-props', [UsersController::class, 'allSavedProps'])->name('all.saved.props');
+
+});
 
 
 
 
-
-Route::get('contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('about', [HomeController::class, 'about'])->name('about');
  
 
 
