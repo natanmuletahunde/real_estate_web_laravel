@@ -45,6 +45,11 @@ Route::get('home-type/{hometype}', [PropertiesController::class, 'displayByHomeT
 
 Route::get('price-asc', [PropertiesController::class, 'priceAsc'])->name('price.asc.prop');
 Route::get('price-desc', [PropertiesController::class, 'priceDesc'])->name('price.desc.prop');
+
+// searching  for props 
+
+Route::get('search', [PropertiesController::class, 'searchProps'])->name('search.prop');
+
 });
 // display contact and about pages
 // user pages
