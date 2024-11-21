@@ -23,6 +23,8 @@ class Property extends Model
         'more_info',
         'location',
         'agent_name',
+        'type',
+        'city'
     ];
     public $timestamp = true;
 }
