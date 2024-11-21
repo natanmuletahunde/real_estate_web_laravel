@@ -128,7 +128,7 @@ class PropertiesController extends Controller
         return view('props.propspricedesc', compact('propsByPriceDesc'));
     }
     // searching for props 
-    public function priceAsc(Request $request)
+    public function searchProps(Request $request)
     {    
         $list_types = $request->get('list_list');
         $offer_types = $request->get('offer_types');

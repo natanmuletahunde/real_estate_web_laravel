@@ -65,11 +65,6 @@
        @endforeach
        <h2 class=" ">There are not  Proprties for  this home type just now </h2>
        @endif
-
-
-
-
-
        <footer class="site-footer">
          <div class="container">
            <div class="row">
