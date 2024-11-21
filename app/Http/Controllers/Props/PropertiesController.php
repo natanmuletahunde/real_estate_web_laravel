@@ -134,7 +134,7 @@ class PropertiesController extends Controller
         $offer_types = $request->get('offer_types');
         $select_city = $request->get('select_city');
         $searches=Property::select()->where('home_type','like',"%$list_types%")->where('type','likes',"%$offer_types%")->where('city','like',"%$select_city")->get();
-        return view('props.propspriceasc', compact('searches'));
+        return view('props.searches', compact('searches'));
     }
 }
 
