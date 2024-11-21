@@ -59,16 +59,14 @@
                 <option value="New York">New York</option>
                 <option value="Brooklyn">Brooklyn</option>
                 <option value="London">London</option>
-                <option value="Japan">Japan</option>
                 <option value="Tokyo">Tokyo</option>
                 <option value="cairo">cairo</option>
-            
-
+    
               </select>
             </div>
           </div>
           <div class="col-md-3">
-            <input type="submit" class="btn btn-success text-white btn-block rounded-0" value="Search">
+            <input name="submit" type="submit" class="btn btn-success text-white btn-block rounded-0" value="Search">
           </div>
         </div>
       </form>

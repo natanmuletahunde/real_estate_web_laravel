@@ -127,11 +127,16 @@ class PropertiesController extends Controller
         $propsByPriceAsc = Property::select()->take(9)->orderBy('price','desc')->get();
         return view('props.propspricedesc', compact('propsByPriceDesc'));
     }
-
+    // searching for props 
+    public function priceAsc(Request $request)
+    {    
+        $list_types = $request->get('list_list');
+        $offer_types = $request->get('offer_types');
+        $select_city = $request->get('select_city');
+        $searches=Property::select()->where('home_type','like',"%$list_types%")->where('offer_types','likes',"%$offer_types%")->where('select_city','like',"%$select_city")->get();
+        return view('props.propspriceasc', compact('searches'));
+    }
 }
-
-
-
 
 
 
