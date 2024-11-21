@@ -19,7 +19,7 @@
      <div class="row">
        <div class="col-12">
          <div class="site-section-title mb-5">
-           <h2>{{$hometype}}  Properties</h2>
+           <h2> Searching Properties</h2>
          </div>
        </div>
      </div>

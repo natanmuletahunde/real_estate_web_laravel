@@ -48,7 +48,7 @@ Route::get('price-desc', [PropertiesController::class, 'priceDesc'])->name('pric
 
 // searching  for props 
 
-Route::get('search', [PropertiesController::class, 'searchProps'])->name('search.prop');
+Route::post('search', [PropertiesController::class, 'searchProps'])->name('search.prop');
 
 });
 // display contact and about pages
