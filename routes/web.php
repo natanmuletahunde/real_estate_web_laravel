@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admins\AdminsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Props\PropertiesController;
+use App\Http\Controllers\Users\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users\UsersController;
-use App\Http\Controllers\Admins\AdminsController;
 
 
 // Route::get('/', function () {
@@ -62,7 +62,7 @@ Route::get('all-saved-props', [UsersController::class, 'allSavedProps'])->name('
 
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/check-login', [AdminsController::class, 'checkLogin'])->name('check.login');
-Route::post('admin/index', [AdminsController::class, 'index'])->name('admins.dashboard');
+Route::get('admin/index', [AdminsController::class, 'index'])->name('admins.dashboard');
 
 
 

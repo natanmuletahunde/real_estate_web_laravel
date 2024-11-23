@@ -25,8 +25,5 @@ class AdminsController extends Controller
         return redirect()->back()->with(['error' => 'error logging in']);
     }
 
-    public function index(){
-    
-        return view('admins.index');
-    }
+  
 }
