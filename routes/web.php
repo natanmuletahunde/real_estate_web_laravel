@@ -5,6 +5,7 @@ use App\Http\Controllers\Props\PropertiesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\UsersController;
+use App\Http\Controllers\Admin\Admin;
 
 
 // Route::get('/', function () {
@@ -59,7 +60,7 @@ Route::get('all-saved-props', [UsersController::class, 'allSavedProps'])->name('
 
 });
 
-Route::get('admin/login', [UsersController::class, 'allRequests'])->name('all.requests');
+Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 
 
 
