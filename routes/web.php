@@ -65,7 +65,7 @@ Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.lo
 Route::post('admin/check-login', [AdminsController::class, 'checkLogin'])->name('check.login');
 Route::group(['prefix'=> 'admin','middleware'=> 'auth:admin'] , function(){
 
-Route::get('admin/index', [AdminsController::class, 'index'])->name('admins.dashboard');
+Route::get('/index', [AdminsController::class, 'index'])->name('admins.dashboard');
 });
 
 
