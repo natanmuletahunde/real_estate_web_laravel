@@ -27,9 +27,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Admins</h5>
-              
-              <p class="card-text">number of admins: 3</p>
-              
+              <p class="card-text">number of admins: {{$adminsCount}}</p>
             </div>
           </div>
         </div>
