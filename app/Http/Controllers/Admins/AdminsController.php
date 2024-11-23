@@ -49,13 +49,20 @@ class AdminsController extends Controller
         return view('admins.createadmins');
     }
 
-    protected function storeAdmins1(array $data)
+    protected function storeAdmins1(Request $request)
     {
-        return \App\Models\User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' =>\Illuminate\Support\Facades\Hash::make($data['password']),
-        ]);
+      $storesAdmins= Admin::create([
+            'name' => $request->name,
+            'email' =>$request->name,
+            'password' =>\Illuminate\Support\Facades\Hash::make($$request->password),
+           
+]);
+if($storesAdmins){
+    return redirect('admin/all-admins/')->with('success', 'Admin Added successfully');
+      
+}
+
+
     }
 
     
