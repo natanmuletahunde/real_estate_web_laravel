@@ -5,7 +5,7 @@ use App\Http\Controllers\Props\PropertiesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\UsersController;
-use App\Http\Controllers\Admin\Admin;
+use App\Http\Controllers\Admins\AdminsController;
 
 
 // Route::get('/', function () {

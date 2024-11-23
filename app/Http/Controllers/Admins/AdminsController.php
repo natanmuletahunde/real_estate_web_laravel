@@ -7,5 +7,11 @@ use Illuminate\Http\Request;
 
 class AdminsController extends Controller
 {
-    //
+      
+
+
+    public function viewLogin(){
+    
+        return view('admins.login');
+    }
 }
