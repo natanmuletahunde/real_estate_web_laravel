@@ -29,7 +29,9 @@ class Admin extends Authenticatable
      *
      * @var array<int, string>
      */
- 
+    protected $hidden = [
+        'password',
+    ];
 
     /**
      * Get the attributes that should be cast.
