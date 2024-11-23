@@ -59,6 +59,9 @@ Route::get('all-saved-props', [UsersController::class, 'allSavedProps'])->name('
 
 });
 
+Route::get('admin/login', [UsersController::class, 'allRequests'])->name('all.requests');
+
+
 
 
 
