@@ -23,6 +23,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarText">
+        @auth('admin')
           <ul class="navbar-nav side-nav">
             <li class="nav-item">
               <a class="nav-link text-white" style="margin-left: 20px;" href="index.html">Home
@@ -42,6 +43,7 @@
               <a class="nav-link" href="requests-admins/show-requests.html" style="margin-left: 20px;">Requests</a>
             </li>
           </ul>
+          @endauth
           <ul class="navbar-nav ml-md-auto d-md-flex">
             @auth('admin')
             <li class="nav-item">
@@ -55,15 +57,22 @@
                 {{Auth:: guard('admin')->user()->name}}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                  >Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
             </li>
             @else
-
             <li class="nav-item">
               <a class="nav-link" href="admins/login-admins.html">login
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            @endauth
+
           </ul>
         </div>
       </div>
