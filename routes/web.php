@@ -59,12 +59,14 @@ Route::get('all-requests', [UsersController::class, 'allRequests'])->name('all.r
 Route::get('all-saved-props', [UsersController::class, 'allSavedProps'])->name('all.saved.props');
 
 });
+  
 
 Route::get('admin/login', [AdminsController::class, 'viewLogin'])->name('view.login');
 Route::post('admin/check-login', [AdminsController::class, 'checkLogin'])->name('check.login');
+Route::group(['prefix'=> 'admin','middleware'=> 'auth:admin'] , function(){
+
 Route::get('admin/index', [AdminsController::class, 'index'])->name('admins.dashboard');
-
-
+});
 
 
 
