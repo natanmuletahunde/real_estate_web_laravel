@@ -48,6 +48,17 @@ class AdminsController extends Controller
     public function createAdmins(){
         return view('admins.createadmins');
     }
+
+    protected function storeAdmins1(array $data)
+    {
+        return \App\Models\User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' =>\Illuminate\Support\Facades\Hash::make($data['password']),
+        ]);
+    }
+
+    
     
 
   

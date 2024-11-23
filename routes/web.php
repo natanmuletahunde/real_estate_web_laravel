@@ -71,9 +71,7 @@ Route::get('/index', [AdminsController::class, 'index'])->name('admins.dashboard
 //create the admins 
 Route::get('/all-admins', [AdminsController::class, 'allAdmins'])->name('admins.admins');
 Route::get('/create-admins', [AdminsController::class, 'createAdmins'])->name('admins.create');
-
-
-
+Route::post('/create-admins', [AdminsController::class, 'storeAdmins'])->name('admins.store');
 });
 
 
