@@ -9,16 +9,27 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Prop\SavedProp;
 
 class UsersController extends Controller
-{
+{  
     public function allRequests()
     {
-         $allRequests = AllRequest::where('user_id',Auth::user()->id)->get();  
-         return view('users.displayrequests', compact('allRequests')); 
+     if(auth()->user()){
+          $allRequests = AllRequest::where('user_id',Auth::user()->id)->get();  
+          return view('users.displayrequests', compact('allRequests')); 
+     }
+     else{
+          return abort('404');
+     }
+
     }
 
     public function allSavedProps()
     {
+     if(auth()->user()){
          $allSavedProps = SavedProp::where('user_id',Auth::user()->id)->get();  
          return view('users.displaysavedprops', compact('allSavedProps')); 
     }
+    else{
+     return abort('404');
+    }
+}
 }
