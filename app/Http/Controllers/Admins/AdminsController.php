@@ -44,6 +44,12 @@ class AdminsController extends Controller
         $allAdmins =Admin::select()->get();
         return view('admins.admins',compact('allAdmins'));
     }
+
+    public function createAdmins(){
+
+       
+        return view('admins.createadmins');
+    }
     
 
   
