@@ -23,8 +23,8 @@
                 @foreach ($allAdmins as  $allAdmin )
                 <tr>
                     <th scope="row">{{$allAdmin->id}}</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <td>{{$allAdmin->name}}</td>
+                    <td>{{$allAdmin->email}}</td>
                 </tr>
                 @endforeach
               </table> 
