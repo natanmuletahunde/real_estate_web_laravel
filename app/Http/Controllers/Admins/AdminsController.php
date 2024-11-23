@@ -35,9 +35,7 @@ class AdminsController extends Controller
         $adminsCount =Admin::select()->count();
         $propCount = Property::select()->count();
         $hometypesCount =HomeType::select()->count();
-
-
-        return view('admins.index',compact('adminsCount'));
+        return view('admins.index',compact('adminsCount','propCount','hometypesCount'));
     }
 
   
