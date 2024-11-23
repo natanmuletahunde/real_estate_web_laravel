@@ -31,7 +31,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('admins.dashboard')}}" style="margin-left: 20px;">Admins</a>
+              <a class="nav-link" href="{{route('admins.admins')}}" style="margin-left: 20px;">Admins</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="hometypes-admins/show-hometype.html" style="margin-left: 20px;">Hometypes</a>
