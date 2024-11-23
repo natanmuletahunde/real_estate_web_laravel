@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use  App\Models\Admin\Admin;
-use  App\Models\Prop\Property;
 use  App\Models\Prop\HomeType;
+use  App\Models\Prop\Property;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -49,14 +50,14 @@ class AdminsController extends Controller
         return view('admins.createadmins');
     }
 
-    protected function storeAdmins1(Request $request)
+    protected function storeAdmins(Request $request)
     {
-      $storesAdmins= Admin::create([
+        $storesAdmins = Admin::create([
             'name' => $request->name,
-            'email' =>$request->name,
-            'password' =>\Illuminate\Support\Facades\Hash::make($$request->password),
-           
-]);
+            'email' => $request->email, // Fixed from $request->name to $request->email
+            'password' => Hash::make($request->password), // Fixed $$request->password to $request->password
+        ]);
+        
 if($storesAdmins){
     return redirect('admin/all-admins/')->with('success', 'Admin Added successfully');
       
