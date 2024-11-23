@@ -28,8 +28,6 @@ class PropertiesController extends Controller
 
         // related Prop
         $relatedProps = Property::where('home_type', $singleProp->home_type)->where('id', '!=', $id)->take(3)->orderBy('created_at', 'desc')->get();
-
-
         // validating form request
         $validatingFormCount = AllRequest::where('prop_id', $id)->where('user_id', Auth::user()->id)->count(); // this code snippet count the number of the request that are much for both prop_id and user_id;;
         
