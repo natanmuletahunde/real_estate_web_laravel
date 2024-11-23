@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use  App\Models\Admin\Admin;
 
 class AdminsController extends Controller
 {
@@ -26,6 +27,9 @@ class AdminsController extends Controller
     }
 
     public function index(){
+
+        $adminsCount = Admin::select()->count();
+
         return view('admins.index');
     }
 
