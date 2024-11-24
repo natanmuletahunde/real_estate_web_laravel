@@ -119,7 +119,7 @@ class AdminsController extends Controller
            'hometypes' => ' required|max:40'
         ]);
         $singleHometype = HomeType::find($id);
-        $singleHometype->update();
+        $singleHometype->update($request->all());
         if ($singleHometype) {
             return redirect('admin/all-hometypes/')->with('update', 'Home type update  successfully');
         }
