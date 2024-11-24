@@ -104,6 +104,15 @@ class AdminsController extends Controller
     }
 
 
+    public function editHomeTypes($id)
+    {
+         $hometype = HomeType::find($id);
+        return view('admins.createHometypes' ,compact('hometype' ));
+    }
+
+    
+
+
     
     
 }
