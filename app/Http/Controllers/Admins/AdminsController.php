@@ -163,36 +163,24 @@ protected function storeProps(Request $request)
     $storeProps= Property::create([
     'title' => $request->title,
     'price' => $request->price,
-
-    'image' => $request->title,
-
+    'image' => $request->myimage,
     'beds' => $request->beds,
-
     'baths' => $request->baths,
-
     'sq_ft' => $request->sq_ft,
     'year_built' => $request->year_built,
-
     'price_sqft' => $request->price_sqft,
     'location' => $request->location,
     'home_type' => $request->home_type,
     'type' => $request->type,
     'city' => $request->city,
     'more_info' => $request->more_info,
-    'type' => $request->title,
+    'type' => $request->type,
     'agent_name' => $request->agent_name,
-
-
-    
-
-
-
-
-        'hometypes' => $request->hometypes,
+   
     ]);
 
-    if ($storesHometypes) {
-        return redirect('admin/all-hometypes/')->with('success', 'Home type Added successfully');
+    if ($storeProps) {
+        return redirect('admin/all-props/')->with('success', ' Property  Added successfully');
     }
 }
 
