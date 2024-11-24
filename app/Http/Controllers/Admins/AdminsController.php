@@ -133,8 +133,5 @@ class AdminsController extends Controller
          if ($homeType) {
             return redirect('admin/all-hometypes/')->with('delete', 'Home type deleted successfully');
         }    
-
-
-    
 }
 }
