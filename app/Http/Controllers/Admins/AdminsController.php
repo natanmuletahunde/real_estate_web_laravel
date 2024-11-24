@@ -85,6 +85,9 @@ class AdminsController extends Controller
 
     protected function storeHomeTypes(Request $request)
     {
+        Request()->validate([
+           'hometypes' => ' required|max:40'
+        ]);
         $storesHometypes = HomeType::create([
             'hometypes' => $request->hometypes,
         ]);
