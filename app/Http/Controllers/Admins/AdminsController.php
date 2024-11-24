@@ -72,7 +72,7 @@ class AdminsController extends Controller
     public function allHomeTypes()
     {
         $allHomeTypes = HomeType::select()->get();
-        return view('admins.createadmins' , compact('allHomeTypes'));
+        return view('admins.hometypes' , compact('allHomeTypes'));
     }
     
 }
