@@ -77,6 +77,9 @@ Route::get('/all-hometypes', [AdminsController::class, 'allHomeTypes'])->name('a
 // createing the hometypes 
 Route::get('/create-hometypes', [AdminsController::class, 'createHomeTypes'])->name('hometypes.create');
 
+Route::post('/create-hometypes', [AdminsController::class, 'storeHomeTypes'])->name('hometypes.store');
+
+
 
 
 

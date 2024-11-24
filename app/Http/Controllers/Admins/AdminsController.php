@@ -80,5 +80,21 @@ class AdminsController extends Controller
 
         return view('admins.createHometypes' );
     }
+
+    //   it is hometype store
+
+    protected function storeHomeTypes(Request $request)
+    {
+        $storesHometypes = HomeType::create([
+            'name' => $request->name,
+        ]);
+
+        if ($storesHometypes) {
+            return redirect('admin/all-hometypes/')->with('success', 'Home type Added successfully');
+        }
+    }
+
+
+    
     
 }
