@@ -163,18 +163,17 @@ protected function storeProps(Request $request)
     $storeProps= Property::create([
     'title' => $request->title,
     'price' => $request->price,
-    'image' => $request->myimage,
+    'image' => $myimage,
     'beds' => $request->beds,
     'baths' => $request->baths,
     'sq_ft' => $request->sq_ft,
     'year_built' => $request->year_built,
-    'price_sqft' => $request->price_sqft,
+    'price_sqFt' => $request->price_sqFt,
     'location' => $request->location,
     'home_type' => $request->home_type,
     'type' => $request->type,
     'city' => $request->city,
     'more_info' => $request->more_info,
-    'type' => $request->type,
     'agent_name' => $request->agent_name,
    
     ]);
