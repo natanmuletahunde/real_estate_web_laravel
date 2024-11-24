@@ -13,40 +13,45 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminsController extends Controller
 {
-      
 
 
-    public function viewLogin(){
-    
+
+    public function viewLogin()
+    {
+
         return view('admins.login');
     }
 
-    public function checkLogin(Request $request){
+    public function checkLogin(Request $request)
+    {
         $remember_me = $request->has('remember_me') ? true : false;
 
         if (auth()->guard('admin')->attempt(['email' => $request->input("email"), 'password' => $request->input("password")], $remember_me)) {
-            
-            return redirect() -> route('admins.dashboard');
+
+            return redirect()->route('admins.dashboard');
         }
         return redirect()->back()->with(['error' => 'error logging in']);
     }
 
-    public function index(){
+    public function index()
+    {
 
-        $adminsCount =Admin::select()->count();
+        $adminsCount = Admin::select()->count();
         $propCount = Property::select()->count();
-        $hometypesCount =HomeType::select()->count();
-        return view('admins.index',compact('adminsCount','propCount','hometypesCount'));
+        $hometypesCount = HomeType::select()->count();
+        return view('admins.index', compact('adminsCount', 'propCount', 'hometypesCount'));
     }
 
-    
-    public function allAdmins(){
 
-        $allAdmins =Admin::select()->get();
-        return view('admins.admins',compact('allAdmins'));
+    public function allAdmins()
+    {
+
+        $allAdmins = Admin::select()->get();
+        return view('admins.admins', compact('allAdmins'));
     }
 
-    public function createAdmins(){
+    public function createAdmins()
+    {
         return view('admins.createadmins');
     }
 
@@ -57,17 +62,17 @@ class AdminsController extends Controller
             'email' => $request->email, // Fixed from $request->name to $request->email
             'password' => Hash::make($request->password), // Fixed $$request->password to $request->password
         ]);
-        
-if($storesAdmins){
-    return redirect('admin/all-admins/')->with('success', 'Admin Added successfully');
-      
-}
 
-
+        if ($storesAdmins) {
+            return redirect('admin/all-admins/')->with('success', 'Admin Added successfully');
+        }
     }
 
-    
-    
 
-  
+    public function allHomeTypes()
+    {
+        $allHomeTypes = HomeType::select()->get();
+        return view('admins.createadmins' , compact('allHomeTypes'));
+    }
+    
 }
