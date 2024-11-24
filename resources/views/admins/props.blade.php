@@ -18,31 +18,24 @@
                     <th scope="col">name</th>
                     <th scope="col">price</th>
                     <th scope="col">home type</th>
+                    <th scope="col">type</th>
+                    <th scope="col">city</th>
                     <th scope="col">delete</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>625 S. BERENDO ST</td>
-                    <td>1,265,500</td>
-                    <td>Condo</td>
+
+                @foreach ($props as $prop)
+                <tr>
+                    <th scope="row">{{$prop->id}}</th>
+                    <td>{{$prop->title}}</td>
+                    <td>{{$prop->price}}</td>
+                    <td>{{$prop->home_type}}</td>
+                    <td>{{$prop->type}}</td>
+                    <td>{{$prop->city}}</td>
                      <td><a href="delete-posts.html" class="btn btn-danger  text-center ">delete</a></td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>625 S. BERENDO ST</td>
-                    <td>1,265,500</td>
-                    <td>Condo</td>
-                    <td><a href="delete-posts.html" class="btn btn-danger  text-center ">delete</a></td>
-                  </tr>
-                 <tr>
-                    <th scope="row">3</th>
-                    <td>625 S. BERENDO ST</td>
-                    <td>1,265,500</td>
-                    <td>Condo</td>
-                    <td><a href="delete-posts.html" class="btn btn-danger  text-center ">delete</a></td>
-                  </tr>
+                @endforeach 
                 </tbody>
               </table> 
             </div>
