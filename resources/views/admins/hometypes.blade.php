@@ -28,7 +28,7 @@
             <tr>
               <th scope="row">{{$hometype->id}}</th>
               <td>{{$hometype->hometypes}}</td>
-              <td><a href="update-hometype.html" class="btn btn-warning text-white text-center ">Update</a></td>
+              <td><a href="{{route('hometypes.edit',$hometype->id)}}" class="btn btn-warning text-white text-center ">Update</a></td>
               <td><a href="delete-hometype.html" class="btn btn-danger  text-center ">Delete</a></td>
             </tr>
             @endforeach
