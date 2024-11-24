@@ -84,6 +84,11 @@ Route::post('/create-hometypes', [AdminsController::class, 'storeHomeTypes'])->n
 Route::get('/edit-hometypes/{id}', [AdminsController::class, 'editHomeTypes'])->name('hometypes.edit');
 Route::post('/update-hometypes/{id}', [AdminsController::class, 'updateHomeTypes'])->name('hometypes.update');
 
+// deleting the hometypes
+Route::get('/delete-hometypes/{id}', [AdminsController::class, 'deleteHomeTypes'])->name('hometypes.delete');
+
+
+
 
 
 
