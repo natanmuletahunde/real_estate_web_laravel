@@ -19,7 +19,6 @@
                         @enderror
                  
                 </div>
-
                 <div class="form-outline mb-4">
                   <input type="text" name="name" id="form2Example1" class="form-control" placeholder="name" />
                   @error('name')
