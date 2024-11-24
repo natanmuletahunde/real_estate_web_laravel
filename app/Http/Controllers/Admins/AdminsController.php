@@ -150,5 +150,52 @@ public function createProps()
 {
     return view('admins.createprops');
 }
+  
+protected function storeProps(Request $request)
+{
+    // Request()->validate([
+    //    'hometypes' => ' required|max:40'
+    // ]);
+
+    $destinationPath = 'assets/images/';
+    $myimage = $request->image->getClientOriginalName();
+    $request->image->move(public_path($destinationPath), $myimage);
+    $storeProps= Property::create([
+    'title' => $request->title,
+    'price' => $request->price,
+
+    'image' => $request->title,
+
+    'beds' => $request->beds,
+
+    'baths' => $request->baths,
+
+    'sq_ft' => $request->sq_ft,
+    'year_built' => $request->year_built,
+
+    'price_sqft' => $request->price_sqft,
+    'location' => $request->location,
+    'home_type' => $request->home_type,
+    'type' => $request->type,
+    'city' => $request->city,
+    'more_info' => $request->more_info,
+    'type' => $request->title,
+    'agent_name' => $request->agent_name,
+
+
+    
+
+
+
+
+        'hometypes' => $request->hometypes,
+    ]);
+
+    if ($storesHometypes) {
+        return redirect('admin/all-hometypes/')->with('success', 'Home type Added successfully');
+    }
+}
+
+
 
 }

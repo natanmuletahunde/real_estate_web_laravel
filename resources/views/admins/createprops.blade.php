@@ -7,8 +7,9 @@
           <div class="card">
             <div class="card-body">
                     <h5 class="card-title mb-5 d-inline">Create Properties</h5>
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('props.store')}}" enctype="multipart/form-data">
                         <!-- Email input -->
+                         @csrf
                         <div class="form-outline mb-4 mt-4">
                             <input type="text" name="title" id="form2Example1" class="form-control" placeholder="title" />
                         </div>  

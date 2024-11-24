@@ -101,6 +101,8 @@ Route::get('/all-props', [AdminsController::class, 'allProps'])->name('props.all
 
 Route::get('/create-props', [AdminsController::class, 'createProps'])->name('props.create');
 
+Route::post('/create-props', [AdminsController::class, 'storeProps'])->name('props.store');
+
 
 });
 
