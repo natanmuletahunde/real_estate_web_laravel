@@ -86,7 +86,7 @@ class AdminsController extends Controller
     protected function storeHomeTypes(Request $request)
     {
         $storesHometypes = HomeType::create([
-            'name' => $request->name,
+            'hometypes' => $request->hometypes,
         ]);
 
         if ($storesHometypes) {
