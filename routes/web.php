@@ -92,13 +92,9 @@ Route::get('/delete-hometypes/{id}', [AdminsController::class, 'deleteHomeTypes'
 
 Route::get('/all-requests', [AdminsController::class, 'Requests'])->name('requests.all');
 
+/// Props 
 
-
-
-
-
-
-
+Route::get('/all-props', [AdminsController::class, 'allProps'])->name('props.all');
 
 });
 

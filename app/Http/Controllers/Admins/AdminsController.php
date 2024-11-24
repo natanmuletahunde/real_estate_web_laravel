@@ -140,4 +140,12 @@ public function Requests()
      $requests = AllRequest::all();
     return view('admins.requests' ,compact('requests' ));
 }
+public function allProps()
+{
+     $props = Property::all();
+    return view('admins.props' ,compact('props' ));
+}
+
+
+
 }
