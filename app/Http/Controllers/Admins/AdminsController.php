@@ -135,9 +135,9 @@ class AdminsController extends Controller
             return redirect('admin/all-hometypes/')->with('delete', 'Home type deleted successfully');
         }        
 }
-public function Requests($id)
+public function Requests()
 {
-     $request = AllRequest::all();
+     $requests = AllRequest::all();
     return view('admins.requests' ,compact('requests' ));
 }
 }

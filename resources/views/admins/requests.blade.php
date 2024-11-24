@@ -14,7 +14,7 @@
                     <th scope="col">name</th>
                     <th scope="col">email</th>
                     <th scope="col">phone</th>
-                    <th scope="col">age</th>
+                    <th scope="col">Agent Name</th>
                    <th scope="col">go to this property</th>
                   </tr>
                 </thead>
@@ -26,14 +26,10 @@
                     <td>{{$request->name}}</td>
                     <td>{{$request->email}}</td>
                     <td>{{$request->phone}}</td>
-                    <td>{{$request->agent_name}}</td>
-
-                    
-                     <td><a href="{{route('single.prop', $request->prop_id)}}" class="btn btn-success  text-center ">go to this property </a></td>
+                    <td>{{$request->agent_name}}</td>    
+                     <td><a href="{{route('single.prop', $request->Prop_id)}}" class="btn btn-success  text-center ">go to this property </a></td>
                   </tr>
                 @endforeach
-               
-                
                 </tbody>
               </table> 
             </div>

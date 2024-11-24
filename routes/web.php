@@ -90,7 +90,7 @@ Route::get('/delete-hometypes/{id}', [AdminsController::class, 'deleteHomeTypes'
 
 // request of the 
 
-Route::get('/all-requests', [AdminsController::class, 'Requests'])->name('request.all');
+Route::get('/all-requests', [AdminsController::class, 'Requests'])->name('requests.all');
 
 
 
