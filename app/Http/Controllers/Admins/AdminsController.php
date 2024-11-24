@@ -109,4 +109,19 @@ class AdminsController extends Controller
          $hometype = HomeType::find($id);
         return view('admins.editHometypes' ,compact('hometype' ));
     }
+
+
+    // updated the hometype 
+
+    protected function updateHomeTypes(Request $request, $id)
+    {
+        Request()->validate([
+           'hometypes' => ' required|max:40'
+        ]);
+        $singleHometype = HomeType::find($id);
+        $singleHometype->update();
+        if ($singleHometype) {
+            return redirect('admin/all-hometypes/')->with('update', 'Home type update  successfully');
+        }
+    }
 }
