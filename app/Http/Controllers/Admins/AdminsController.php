@@ -57,6 +57,12 @@ class AdminsController extends Controller
 
     protected function storeAdmins(Request $request)
     {
+        Request()->validate(rules: [
+            'name' => ' required|max:40',
+            'email' => ' required|max:40',
+            'password' => ' required|max:40',
+
+         ]);
         $storesAdmins = Admin::create([
             'name' => $request->name,
             'email' => $request->email, // Fixed from $request->name to $request->email
