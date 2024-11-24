@@ -96,6 +96,12 @@ Route::get('/all-requests', [AdminsController::class, 'Requests'])->name('reques
 
 Route::get('/all-props', [AdminsController::class, 'allProps'])->name('props.all');
 
+
+// create  new properties
+
+Route::get('/create-props', [AdminsController::class, 'createProps'])->name('props.create');
+
+
 });
 
 

@@ -146,6 +146,9 @@ public function allProps()
     return view('admins.props' ,compact('props' ));
 }
 
-
+public function createProps()
+{
+    return view('admins.createprops');
+}
 
 }
