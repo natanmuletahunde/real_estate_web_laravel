@@ -8,7 +8,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title mb-4 d-inline">Hometypes</h5>
-              <a href="create-hometype.html" class="btn btn-primary mb-4 text-center float-right">Create Hometypes</a>
+              <a href="{{route('hometypes.create')}}" class="btn btn-primary mb-4 text-center float-right">Create Hometypes</a>
               <table class="table">
                 <thead>
                   <tr>
@@ -19,24 +19,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Condo</td>
+                    @foreach ( $allHomeTypes as $hometype )
+                    <tr>
+                    <th scope="row">{{$hometype->id}}</th>
+                    <td>{{$hometype->hometypes}}</td>
                     <td><a  href="update-hometype.html" class="btn btn-warning text-white text-center ">Update</a></td>
                     <td><a href="delete-hometype.html" class="btn btn-danger  text-center ">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Condo</td>
-                    <td><a  href="update-hometype.html" class="btn btn-warning text-white text-center ">Update</a></td>
-                    <td><a href="delete-hometype.html" class="btn btn-danger  text-center ">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Condo</td>
-                    <td><a  href="update-hometype.html" class="btn btn-warning text-white text-center ">Update</a></td>
-                    <td><a href="delete-hometype.html" class="btn btn-danger  text-center ">Delete</a></td>
-                  </tr>
+                </tr>
+                    @endforeach
+                
                 </tbody>
               </table> 
             </div>
