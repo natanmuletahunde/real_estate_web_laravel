@@ -9,11 +9,12 @@
             <div class="card-body">
                     <h5 class="card-title mb-5 d-inline">Create Gallery</h5>
                     <form method="POST" action="{{route('gallery.store')}}" enctype="multipart/form-data">
+                      @csrf
                         <div class="mb-3">
                             <label for="formFileMultiple" class="form-label">Property Images</label>
-                            <input name="image" class="form-control" type="file" id="formFileMultiple" multiple>
+                            <input name="image[]" class="form-control" type="file" id="formFileMultiple" multiple>
                         </div>
-                        <select name="type" class="form-control mt-3 mb-4 form-select" aria-label="Default select example">
+                        <select name="prop_id" class="form-control mt-3 mb-4 form-select" aria-label="Default select example">
                             <option selected>Select Property</option>
                             <option value="1">871 Crenshaw Blvd</option>
                             <option value="2">Brooklyn</option>
