@@ -182,4 +182,12 @@ class AdminsController extends Controller
             return redirect('admin/all-props/')->with('success', ' Property  Added successfully');
         }
     }
+
+
+    public function createGallery()
+    {
+        return view('admins.creategallery');
+    }
+
+    
 }
