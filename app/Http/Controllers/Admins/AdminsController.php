@@ -189,5 +189,31 @@ class AdminsController extends Controller
         return view('admins.creategallery');
     }
 
-    
+
+
+    public function storeGallery(Request $request)
+    {
+        // $this->validate($request, [
+        //     'file_names' => 'required',
+        //     'file_names.*' => 'image'
+        // ]);
+
+        $files = [];
+        if ($request->hasfile('image')) {image
+            foreach ($request->file('image') as $file) {
+                $path = 
+                $name = time() . rand(1, 50) . '.' . $file->extension();
+                $file->move(public_path(), $name);
+                $files[] = $name;
+            }
+        }
+
+        $file = new File();
+        $file->file_names = $files;
+        $file->save();
+
+        return back()->with('success', 'Images are successfully uploaded');
+
+        
+    }
 }

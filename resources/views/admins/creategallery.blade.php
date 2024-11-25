@@ -8,7 +8,7 @@
           <div class="card">
             <div class="card-body">
                     <h5 class="card-title mb-5 d-inline">Create Gallery</h5>
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('gallery.store')}}" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="formFileMultiple" class="form-label">Property Images</label>
                             <input name="image" class="form-control" type="file" id="formFileMultiple" multiple>
