@@ -9,6 +9,7 @@ use  App\Models\Prop\HomeType;
 use  App\Models\Prop\Property;
 use  App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
+use App\Models\File;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -226,6 +227,14 @@ class AdminsController extends Controller
     public function deleteProps($id)
     {
         $deleteProp = Property::find($id);
+
+        if(File::exists(public_path('assets/images/' . $deleteProp->image))){
+            File::unlink(public_path('assets/images/' . $deleteProp->image));
+        }else{
+            //dd('File does not exists.');
+        }
+
+        $deleteProp->delete();
         return view('admins.creategallery');
     }
 
