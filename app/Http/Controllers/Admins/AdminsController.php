@@ -63,7 +63,7 @@ class AdminsController extends Controller
             'email' => ' required|max:40',
             'password' => ' required|max:40',
 
-         ]);
+        ]);
         $storesAdmins = Admin::create([
             'name' => $request->name,
             'email' => $request->email, // Fixed from $request->name to $request->email
@@ -79,13 +79,13 @@ class AdminsController extends Controller
     public function allHomeTypes()
     {
         $allHomeTypes = HomeType::select()->get();
-        return view('admins.hometypes' , compact('allHomeTypes'));
+        return view('admins.hometypes', compact('allHomeTypes'));
     }
 
     public function createHomeTypes()
     {
 
-        return view('admins.createHometypes' );
+        return view('admins.createHometypes');
     }
 
     //   it is hometype store
@@ -93,7 +93,7 @@ class AdminsController extends Controller
     protected function storeHomeTypes(Request $request)
     {
         Request()->validate([
-           'hometypes' => ' required|max:40'
+            'hometypes' => ' required|max:40'
         ]);
         $storesHometypes = HomeType::create([
             'hometypes' => $request->hometypes,
@@ -107,8 +107,8 @@ class AdminsController extends Controller
 
     public function editHomeTypes($id)
     {
-         $hometype = HomeType::find($id);
-        return view('admins.editHometypes' ,compact('hometype' ));
+        $hometype = HomeType::find($id);
+        return view('admins.editHometypes', compact('hometype'));
     }
 
 
@@ -117,7 +117,7 @@ class AdminsController extends Controller
     protected function updateHomeTypes(Request $request, $id)
     {
         Request()->validate([
-           'hometypes' => ' required|max:40'
+            'hometypes' => ' required|max:40'
         ]);
         $singleHometype = HomeType::find($id);
         $singleHometype->update($request->all());
@@ -128,61 +128,58 @@ class AdminsController extends Controller
 
     public function deleteHomeTypes($id)
     {
-         $homeType = HomeType::find($id);
-         $homeType->delete();
+        $homeType = HomeType::find($id);
+        $homeType->delete();
 
-         if ($homeType) {
+        if ($homeType) {
             return redirect('admin/all-hometypes/')->with('delete', 'Home type deleted successfully');
-        }        
-}
-public function Requests()
-{
-     $requests = AllRequest::all();
-    return view('admins.requests' ,compact('requests' ));
-}
-public function allProps()
-{
-     $props = Property::all();
-    return view('admins.props' ,compact('props' ));
-}
-
-public function createProps()
-{
-    return view('admins.createprops');
-}
-  
-protected function storeProps(Request $request)
-{
-    // Request()->validate([
-    //    'hometypes' => ' required|max:40'
-    // ]);
-
-    $destinationPath = 'assets/images/';
-    $myimage = $request->image->getClientOriginalName();
-    $request->image->move(public_path($destinationPath), $myimage);
-    $storeProps= Property::create([
-    'title' => $request->title,
-    'price' => $request->price,
-    'image' => $myimage,
-    'beds' => $request->beds,
-    'baths' => $request->baths,
-    'sq_ft' => $request->sq_ft,
-    'year_built' => $request->year_built,
-    'price_sqFt' => $request->price_sqFt,
-    'location' => $request->location,
-    'home_type' => $request->home_type,
-    'type' => $request->type,
-    'city' => $request->city,
-    'more_info' => $request->more_info,
-    'agent_name' => $request->agent_name,
-   
-    ]);
-
-    if ($storeProps) {
-        return redirect('admin/all-props/')->with('success', ' Property  Added successfully');
+        }
     }
-}
+    public function Requests()
+    {
+        $requests = AllRequest::all();
+        return view('admins.requests', compact('requests'));
+    }
+    public function allProps()
+    {
+        $props = Property::all();
+        return view('admins.props', compact('props'));
+    }
 
+    public function createProps()
+    {
+        return view('admins.createprops');
+    }
 
+    protected function storeProps(Request $request)
+    {
+        // Request()->validate([
+        //    'hometypes' => ' required|max:40'
+        // ]);
 
+        $destinationPath = 'assets/images/';
+        $myimage = $request->image->getClientOriginalName();
+        $request->image->move(public_path($destinationPath), $myimage);
+        $storeProps = Property::create([
+            'title' => $request->title,
+            'price' => $request->price,
+            'image' => $myimage,
+            'beds' => $request->beds,
+            'baths' => $request->baths,
+            'sq_ft' => $request->sq_ft,
+            'year_built' => $request->year_built,
+            'price_sqFt' => $request->price_sqFt,
+            'location' => $request->location,
+            'home_type' => $request->home_type,
+            'type' => $request->type,
+            'city' => $request->city,
+            'more_info' => $request->more_info,
+            'agent_name' => $request->agent_name,
+
+        ]);
+
+        if ($storeProps) {
+            return redirect('admin/all-props/')->with('success', ' Property  Added successfully');
+        }
+    }
 }

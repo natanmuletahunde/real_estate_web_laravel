@@ -88,11 +88,11 @@ Route::post('/update-hometypes/{id}', [AdminsController::class, 'updateHomeTypes
 Route::get('/delete-hometypes/{id}', [AdminsController::class, 'deleteHomeTypes'])->name('hometypes.delete');
 
 
-// request of the 
+// create the request of the 
 
 Route::get('/all-requests', [AdminsController::class, 'Requests'])->name('requests.all');
 
-/// Props 
+// post the Props 
 
 Route::get('/all-props', [AdminsController::class, 'allProps'])->name('props.all');
 

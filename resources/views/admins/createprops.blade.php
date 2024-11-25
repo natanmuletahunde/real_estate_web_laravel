@@ -35,7 +35,7 @@
                             <input type="text" name="year_built" id="form2Example1" class="form-control" placeholder="Year Build" />
                         </div> 
                         <div class="form-outline mb-4 mt-4">
-                            <input type="text" name="price_sqft" id="form2Example1" class="form-control" placeholder="Price Per SQ FT" />
+                            <input type="text" name="price_sqFt" id="form2Example1" class="form-control" placeholder="Price Per SQ FT" />
                         </div> 
                         <div class="form-outline mb-4 mt-4">
                           <input type="text" name="location" id="form2Example1" class="form-control" placeholder="location" />
