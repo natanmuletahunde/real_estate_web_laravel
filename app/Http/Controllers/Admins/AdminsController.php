@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
 use  App\Models\Admin\Admin;
+use  App\Models\Prop\AllRequest;
 use  App\Models\Prop\HomeType;
 use  App\Models\Prop\Property;
+use  App\Models\Prop\PropImage;
 use Illuminate\Http\Request;
-use  App\Models\Prop\AllRequest;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -197,23 +198,29 @@ class AdminsController extends Controller
         //     'file_names' => 'required',
         //     'file_names.*' => 'image'
         // ]);
-
-        $files = [];
-        if ($request->hasfile('image')) {image
+    
+        
+        if ($request->hasfile('image')) {
             foreach ($request->file('image') as $file) {
-                $path = 
+                $path = "assets/images_gallery/";
                 $name = time() . rand(1, 50) . '.' . $file->extension();
-                $file->move(public_path(), $name);
+                $file->move(public_path($path), $name);
                 $files[] = $name;
+    
+                PropImage::create([
+                    "image" => $name,
+                    "Prop_id" => $request->Prop_id, // Fixed the reference to $prop_id
+                ]);
             }
         }
-
-        $file = new File();
-        $file->file_names = $files;
-        $file->save();
-
-        return back()->with('success', 'Images are successfully uploaded');
-
-        
-    }
+    
+        // $file = new File(); // Correctly reference the File model
+        // $file->filenames = $files;
+        // $file->save();
+    
+        if ($name) {
+            return redirect('admin/all-props/')->with('success_gallery', ' Gallery  Added successfully');
+        }    }
+    
+    
 }

@@ -14,7 +14,7 @@
                             <label for="formFileMultiple" class="form-label">Property Images</label>
                             <input name="image[]" class="form-control" type="file" id="formFileMultiple" multiple>
                         </div>
-                        <select name="prop_id" class="form-control mt-3 mb-4 form-select" aria-label="Default select example">
+                        <select name="Prop_id" class="form-control mt-3 mb-4 form-select" aria-label="Default select example">
                             <option selected>Select Property</option>
                             <option value="1">871 Crenshaw Blvd</option>
                             <option value="2">Brooklyn</option>
