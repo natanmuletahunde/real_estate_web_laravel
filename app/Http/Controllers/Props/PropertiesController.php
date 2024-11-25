@@ -74,7 +74,7 @@ class PropertiesController extends Controller
         //     "phone" => 'required|max:50',
         // ]);
         $saveProp = SavedProp::create([
-            'Prop_id' => $request->prop_id, 
+            'prop_id' => $request->prop_id, 
             'user_id' => Auth::id(),// Using correct field name
             'title' => $request->title, // Corrected field nam
             'image' => $request->image,

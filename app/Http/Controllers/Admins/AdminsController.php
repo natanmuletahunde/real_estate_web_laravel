@@ -235,7 +235,11 @@ class AdminsController extends Controller
         }
 
         $deleteProp->delete();
-        return view('admins.creategallery');
+
+       
+        if ($deleteProp) {
+            return redirect('admin/all-props/')->with('delete', '   Property deleted successfully');
+        } 
     }
 
       
