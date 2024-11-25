@@ -104,6 +104,13 @@ Route::get('/create-props', [AdminsController::class, 'createProps'])->name('pro
 Route::post('/create-props', [AdminsController::class, 'storeProps'])->name('props.store');
 
 
+// create the multiple Gallery
+Route::get('/create-gallery', [AdminsController::class, 'createProps'])->name('gallery.create');
+Route::post('/create-gallery', [AdminsController::class, 'storeProps'])->name('gallery.store');
+
+
+
+
 });
 
 
