@@ -109,6 +109,8 @@ Route::get('/create-gallery', [AdminsController::class, 'createGallery'])->name(
 Route::post('/create-gallery', [AdminsController::class, 'storeGallery'])->name('gallery.store');
 
 
+// delete props
+Route::post('/delete-props/{id}', [AdminsController::class, 'deleteProps'])->name('props.delete');
 
 
 });

@@ -45,7 +45,7 @@
                             <td>{{$prop->home_type}}</td>
                             <td>{{$prop->type}}</td>
                             <td>{{$prop->city}}</td>
-                            <td><a href="delete-posts.html" class="btn btn-danger  text-center ">delete</a></td>
+                            <td><a href="{{route('props.delete',$prop->id)}}" class="btn btn-danger  text-center ">delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>

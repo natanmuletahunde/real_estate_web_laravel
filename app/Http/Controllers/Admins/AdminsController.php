@@ -220,7 +220,15 @@ class AdminsController extends Controller
     
         if ($name) {
             return redirect('admin/all-props/')->with('success_gallery', ' Gallery  Added successfully');
-        }    }
-    
+        }    
+    }
+
+    public function deleteProps($id)
+    {
+        $deleteProp = Property::find($id);
+        return view('admins.creategallery');
+    }
+
+      
     
 }
